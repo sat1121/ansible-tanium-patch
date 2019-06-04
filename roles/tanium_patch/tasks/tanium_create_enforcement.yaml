@@ -1,0 +1,11 @@
+---
+- name: Create Enforcement for a maintenance window
+  delegate_to: localhost
+  tanium_patch_enforcement:
+    taniumhostname: '{{ tanium_hostname }}'
+    username: '{{ tanium_username }}'
+    password: '{{ tanium_password }}'
+    mw_name: '{{ mw_name }}'
+    computergroupID: '{{ item }}'
+  register: result
+  with_items: "{{ computer_group_ID }}"

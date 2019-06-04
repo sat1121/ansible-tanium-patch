@@ -1,0 +1,11 @@
+---
+- name: Create Maintenance Window
+  delegate_to: localhost
+  tanium_patch_maintenancewindow:
+    taniumhostname: '{{ tanium_hostname }}'
+    username: '{{ tanium_username }}'
+    password: '{{ tanium_password }}'
+    mw_name: '{{ mw_name }}'
+    patch_start_time: '{{ patch_start_time }}'
+    patch_end_time: '{{ patch_end_time }}'
+  register: result
